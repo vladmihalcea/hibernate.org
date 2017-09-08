@@ -40,19 +40,30 @@ layout: project-frame
 
 .row-fluid
   .span12
-    %h2 Latest releases
+    %h2 Maintained series
     - unless project_description.release_series.nil?
+      - first_stable_release = true
       - project_description.release_series.values.each do |series|
         - release = series.releases[0]
         - unless series.displayed then next end
         %dl.dl-horizontal
           %dt
-            = release.version
+            = series.version
             &nbsp;
-            %a.btn.btn-info{:href => "#{sourceforge_zip_url(project_description, release)}"}
+            %a.btn.btn-info{:href => "#{sourceforge_zip_url(project_description, release)}", :title => "Download"}
               %i.icon-cloud-download
+            - if release.stable && first_stable_release
+              - doc_root_url = "#{project_description.stable_reference_doc_prefix_url}"
+              - first_stable_release = false
+            - else
+              - doc_root_url = "#{project_description.reference_doc_prefix_url}#{release.version_family}/"
+            %a.btn.btn-info{:href => "#{doc_root_url}#{project_description.reference_doc_type}/en-US/html_single/", :title => "Reference documentation"}
+              %i.icon-book
           %dd
-            %small= release.date
+            %small
+              %strong= release.version
+              = "-"
+              = release.date
             %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable' : 'development'}
           %dd
             %small

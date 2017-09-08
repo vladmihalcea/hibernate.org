@@ -45,12 +45,15 @@ layout: project-frame
             - doc_root_url = "#{project_description.reference_doc_prefix_url}#{release.version_family}/"
           %dl.dl-horizontal
             %dt
-              = release.version
+              = series.version
               &nbsp;
               %a.btn.btn-info{:href => "#{doc_root_url}#{project_description.reference_doc_type}/en-US/html_single/"}
                 %i.icon-book
             %dd
-              %small= release.date
+              %small
+                %strong= release.version
+                = "-"
+                = release.date
               %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable'   : 'development'}
             %dd
               %small= series.summary
