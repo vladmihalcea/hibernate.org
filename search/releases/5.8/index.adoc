@@ -1,4 +1,3 @@
-= Hibernate Search 5.8 series
 :awestruct-layout: project-releases-series
 :awestruct-project: search
 :awestruct-series_version: "5.8"
