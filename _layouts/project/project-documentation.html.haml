@@ -35,8 +35,9 @@ layout: project-frame
     %h2 Reference documentation
     - if not site.projects[page.project].sorted_releases.nil?
       - first_stable_release = true
-      - site.projects[page.project].sorted_releases.each do |release|
-        - if release.displayed
+      - project_description.release_series.values.each do |series|
+        - release = series.releases[0]
+        - if series.displayed
           - if release.stable && first_stable_release
             - doc_root_url = "#{project_description.stable_reference_doc_prefix_url}"
             - first_stable_release = false
@@ -52,7 +53,7 @@ layout: project-frame
               %small= release.date
               %span.label{:class => "#{release.stable ? 'label-success' : 'label-warning'}"} #{release.stable ? 'stable'   : 'development'}
             %dd
-              %small= release.summary
+              %small= series.summary
             %dd
               %ul
                 %li
