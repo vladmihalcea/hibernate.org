@@ -1,0 +1,9 @@
+summary: Improved integration with Elasticsearch 2.x, compatible with Hibernate ORM 5.2.x
+displayed: true
+integration_constraints:
+  orm:
+    version: 5.2 (>= 5.2.3.Final)
+  elasticsearch:
+    version: 2.0 - 5.5
+  lucene:
+    version: 5.5

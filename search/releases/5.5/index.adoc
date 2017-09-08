@@ -1,0 +1,7 @@
+= Hibernate Search 5.5 series
+:awestruct-layout: project-releases-series
+:awestruct-project: search
+:awestruct-series_version: "5.5"
+:page-interpolate: true
+
+TODO
