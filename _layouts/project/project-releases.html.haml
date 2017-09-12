@@ -40,7 +40,7 @@ layout: project-frame
 
 .row-fluid
   .span12
-    %h2 Maintained series
+    %h2 Series
     - unless project_description.release_series.nil?
       - first_stable_release = true
       - project_description.release_series.values.each do |series|

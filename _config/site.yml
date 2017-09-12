@@ -131,6 +131,9 @@ projects:
         - name: Releases
           href: '/search/releases/'
           css_class: 'icon-fixed-width icon-tags'
+        - name: Downloads
+          href: '/search/downloads/'
+          css_class: 'icon-fixed-width icon-cloud-download'
         - name: Documentation
           href: '/search/documentation/'
           css_class: 'icon-fixed-width icon-book'
